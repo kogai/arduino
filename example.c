@@ -13,10 +13,10 @@ void setup(){
 
 void loop(){
 	analogWrite(LED2, 50);
-	delay(1);
-	digitalWrite(LED2, LOW);
-	delay(20);
-	Serial.println(digitalRead(BUTTON));
+	// delay(1);
+	// digitalWrite(LED2, LOW);
+	// delay(20);
+	// Serial.println(digitalRead(BUTTON));
 	// for ( i = 0; i < 255; ++i)
 	// {
 	// 	analogWrite(LED2, i);
