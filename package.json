@@ -1,0 +1,25 @@
+{
+  "name": "arduino",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kogai/arduino.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kogai/arduino/issues"
+  },
+  "homepage": "https://github.com/kogai/arduino",
+  "dependencies": {
+    "cylon": "^0.21.2",
+    "cylon-firmata": "^0.18.0",
+    "cylon-gpio": "^0.21.0",
+    "cylon-i2c": "^0.18.0"
+  }
+}
