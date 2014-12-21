@@ -1,45 +1,31 @@
 const int LED = 9;
 const int BUTTON = 7;
+boolean state = true;
 
-int val = 0;
-int val_regacy = 0;
-boolean state = false;
-boolean state_regacy = false;
-
-int bright = 0;
-unsigned long startTime = 0;
+int brightness = 0;
 
 void setup(){
 	Serial.begin(9600);
 	pinMode(LED, OUTPUT);
-	pinMode(BUTTON, INPUT);
 }
 
 void loop(){
-	val = digitalRead(BUTTON);
-
-	if( val == HIGH && val_regacy == LOW ){
-		startTime = millis();
-		if( state == false ){
-			state = true;
-		}else if( state == true ){
+    Serial.println( brightness );
+	if(state == true){
+		analogWrite(LED, brightness);
+		brightness++;
+		delay(50);
+		if( brightness >= 50 ){
 			state = false;
+			delay(500);
 		}
-	}
-
-	if( state == true && ( millis() - startTime ) > 500 ){
-		bright++;
-		delay(10);
-		if( bright > 255 ){
-			bright = 0;
+	}else{	
+		analogWrite(LED, brightness);
+		brightness--;
+		delay(50);
+		if( 0 => brightness ){
+			state = true;
+			delay(500);
 		}
-	}
-	val_regacy = val;
-    Serial.println( state );
-
-	if( state == true ){
-		analogWrite(LED, bright);
-	}else{
-		analogWrite(LED, 0);
 	}
 }
